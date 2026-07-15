@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Animated</title>
+    <link rel="stylesheet" href="style.css">
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Animated Scenes</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div class="banner3">
+
+    <video autoplay muted loop>
+        <source src="images/banner3.mp4" type="video/mp4">
+    </video>
+
+    <div class="banner-text">
+        <h1>Animated Scenes</h1>
+        <p>Short Animations</p>
+    </div>
+
+</div>
+
+<!--ALL VIDEOS HERE-->
+
+<!--spaceship-->
+<div class="animation-card" onclick="openVideo('images/Gallery/Animated/Flying Spaceship.mp4')">
+
+    <img src="images/Gallery/Animated/Flying Spaceship.png" alt="Flying Spaceship">
+
+    <h2>Flying Spaceship</h2>
+
+</div>
+<!--cars-->
+<div class="animation-card" onclick="openVideo('images/Gallery/Animated/BMW&Porsche.mp4')">
+
+    <img src="images/Gallery/Animated/bmw preview.png" alt="Cars">
+
+    <h2>BMW & Porsche</h2>
+
+</div>
+<!--mftf-->
+<div class="animation-card" onclick="openVideo('images/Gallery/Animated/The Man from the Fog.mp4')">
+
+    <img src="images/Gallery/Animated/mftf preview.png" alt="mftf">
+
+    <h2>The Man from the Fog [Minecraft]</h2>
+
+</div>
+
+
+<div class="video-overlay" id="videoOverlay" onclick="closeVideo(event)">
+
+    <div class="video-box" onclick="event.stopPropagation()">
+
+        <span class="close-video" onclick="closeVideo(event)">×</span>
+
+        <video id="popupVideo" controls>
+        </video>
+
+    </div>
+
+</div>
+
+
+<script>
+function openVideo(videoSource) {
+
+    let overlay = document.getElementById("videoOverlay");
+    let video = document.getElementById("popupVideo");
+
+    video.src = videoSource;
+
+    overlay.classList.add("show");
+
+    video.play();
+}
+
+
+function closeVideo(event) {
+
+    if (event) {
+        event.stopPropagation();
+    }
+
+    let overlay = document.getElementById("videoOverlay");
+    let video = document.getElementById("popupVideo");
+
+    overlay.classList.remove("show");
+
+    video.pause();
+    video.src = "";
+}
+</script>
+
+</body>
+
+</html>

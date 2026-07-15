@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Showcase [WIP]</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- Banner -->
+    <div class="banner">
+
+        <video autoplay muted loop>
+            <source src="images/banner.mp4" type="video/mp4">
+        </video>
+
+        <div class="banner-text">
+            <h1>3D Artwork</h1>
+            <h2>Various creations</h2>
+        </div>
+
+    </div>
+
+
+    <!-- Gallery Tiles -->
+<div class="gallery-tiles">
+
+    <a href="animated.html" class="tile">
+        <img src="images/Animated Scenes.png" alt="Animated Scenes">
+        <h2>Animated Scenes</h2>
+    </a>
+
+    <a href="renders.html" class="tile">
+        <img src="images/Static Scenes.png" alt="Static Scenes">
+        <h2>Static Scenes</h2>
+    </a>
+
+</div>
+
+<div class="info-container">
+
+    <button class="info-button" onclick="toggleInfo()">
+        !
+    </button>
+
+    <div class="info-panel" id="infoPanel">
+        <h2>Important</h2>
+        <p>
+            These are not all my works
+        </p>
+    </div>
+
+</div>
+
+</div>
+
+<script>
+function toggleInfo() {
+    let panel = document.getElementById("infoPanel");
+
+    panel.classList.toggle("show");
+}
+</script>
+
+<script>
+document.querySelectorAll("a").forEach(link => {
+    link.addEventListener("click", function (e) {
+
+        // Ignore links that open in a new tab
+        if (this.target === "_blank") return;
+
+        e.preventDefault();
+
+        document.body.classList.add("fade-out");
+
+        setTimeout(() => {
+            window.location.href = this.href;
+        }, 400);
+    });
+});
+</script>
+
+</body>
+
+</html>
