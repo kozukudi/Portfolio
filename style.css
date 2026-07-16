@@ -530,31 +530,56 @@ body.fade-out {
 
     z-index: 1000;
 
-    padding: 12px 22px;
+    display: flex;
+    align-items: center;
 
-    background: rgba(20, 20, 20, 0.75);
-    backdrop-filter: blur(10px);
-
-    color: white;
     text-decoration: none;
 
-    font-size: 20px;
-    font-weight: bold;
+    background: rgba(20,20,20,0.75);
+    backdrop-filter: blur(10px);
 
-    border-radius: 12px;
+    border-radius: 15px;
+
+    padding: 10px;
 
     transition:
-        transform 0.25s ease,
-        background 0.25s ease;
+        background 0.3s ease,
+        transform 0.3s ease;
 }
 
 .home-button:hover {
-    background: rgba(40, 40, 40, 0.9);
-    transform: scale(1.08);
+    background: rgba(40,40,40,0.9);
+    transform: scale(1.05);
 }
 
 .home-button img {
-    width: 60px;
-    height: auto;
+    width: 55px;
     display: block;
+}
+
+.home-text {
+    width: 0;
+
+    overflow: hidden;
+    white-space: nowrap;
+
+    opacity: 0;
+
+    margin-left: 0;
+
+    color: white;
+    font-size: 22px;
+    font-weight: bold;
+
+    transition:
+        width 0.35s ease,
+        opacity 0.35s ease,
+        margin-left 0.35s ease;
+}
+
+.home-button:hover .home-text {
+    width: 70px;
+    opacity: 1;
+
+    margin-left: 15px;
 }
