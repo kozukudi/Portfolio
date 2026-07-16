@@ -554,6 +554,7 @@ body.fade-out {
 }
 
 .home-button img {
-    width: 55px;
+    width: 60px;
+    height: auto;
     display: block;
 }
