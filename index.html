@@ -88,6 +88,9 @@ document.querySelectorAll("a").forEach(link => {
         }, 400);
     });
 });
+window.addEventListener("pageshow", function () {
+    document.body.classList.remove("fade-out");
+});
 </script>
 
 </body>

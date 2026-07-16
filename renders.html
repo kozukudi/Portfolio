@@ -181,6 +181,27 @@
 
 </div>
 
+<script>
+document.querySelectorAll("a").forEach(link => {
+    link.addEventListener("click", function (e) {
+
+        // Ignore links that open in a new tab
+        if (this.target === "_blank") return;
+
+        e.preventDefault();
+
+        document.body.classList.add("fade-out");
+
+        setTimeout(() => {
+            window.location.href = this.href;
+        }, 400);
+    });
+});
+window.addEventListener("pageshow", function () {
+    document.body.classList.remove("fade-out");
+});
+</script>
+
 </body>
 
 </html>
